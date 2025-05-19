@@ -1,9 +1,9 @@
 import express from 'express';
 import { createConnection } from 'typeorm';
-import { User } from './entity/User';
+// import { User } from './entity/User';
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 5000;
 
 createConnection().then(() => {
   console.log('Connected to PostgreSQL');
